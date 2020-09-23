@@ -13,15 +13,6 @@ const connect = () => {
     conn.write('Name: RG') // sending name to the game server (three character limit)
   })
 
-  // moving the snake up one unit on connect
-  // conn.on('connect', () => {
-    // conn.write('Move: up');
-    // setTimeout(() => conn.write('Move: up'), 1000);
-    // setTimeout(() => conn.write('Move: left'),1000);
-    // setTimeout(() => conn.write('Move: left'), 1000);
-    // setInterval(() => conn.write('Move: right'), 1000);
-  // })
-
   conn.on('data', (data) => {
     console.log(data);
   })

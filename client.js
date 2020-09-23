@@ -1,9 +1,10 @@
 const net = require('net');
+const { IP, PORT } = require('./constants');
 
 const connect = () => {
   const conn = net.createConnection({
-    host: '135.23.222.131',
-    port: 50542
+    host: IP,
+    port: PORT
   });
   // interpret data as text
   conn.setEncoding('utf8');
@@ -15,6 +16,7 @@ const connect = () => {
 
   conn.on('data', (data) => {
     console.log(data);
+    console.log('press any playable key or "ctrl + c" to exit')
   })
 
   return conn;
